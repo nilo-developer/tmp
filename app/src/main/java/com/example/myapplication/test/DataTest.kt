@@ -5,12 +5,13 @@ import com.example.myapplication.dataClass.DataProduct
 class DataTest {
 
     companion object{
-     fun getDataProduct(): ArrayList<DataProduct> {
+     fun getDataProduct(): List<DataProduct> {
          val array = arrayListOf<DataProduct>()
 
          for (item in 1..10){
              array.add(
-                 DataProduct(item,
+                 DataProduct(
+                     item,
                      "گوشی موبایل",
                      "150.000",
                      true,

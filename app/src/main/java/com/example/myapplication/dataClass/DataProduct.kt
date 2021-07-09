@@ -7,5 +7,4 @@ data class DataProduct(
     val discount: Boolean,
     val pricediscount: String,
     val imgAddress: String
-) {
-}
+    )

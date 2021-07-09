@@ -9,7 +9,9 @@ import androidx.appcompat.widget.AppCompatTextView
 import java.util.jar.Attributes
 
 class CustomTextView(context: Context , attributes: AttributeSet) : AppCompatTextView(context,attributes) {
+
     init {
+        drawline()
         textSize = 12f
     }
 

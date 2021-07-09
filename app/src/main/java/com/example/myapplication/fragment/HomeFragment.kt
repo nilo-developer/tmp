@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.myapplication.R
+import com.example.myapplication.dataClass.DataProduct
 import com.example.myapplication.presenter.PresenterHomeFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
 
 
@@ -23,6 +25,10 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         presenter.onCreate()
+    }
+
+    fun setDataRecycler(data: List<DataProduct>) {
+        new_product_home_fragment.initRecycler(data)
     }
 
     override fun onDestroy() {

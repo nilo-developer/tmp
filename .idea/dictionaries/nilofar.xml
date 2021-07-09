@@ -2,6 +2,7 @@
   <dictionary name="nilofar">
     <words>
       <w>bottomnav</w>
+      <w>drawline</w>
       <w>failor</w>
       <w>forosh</w>
       <w>getitem</w>
@@ -10,6 +11,7 @@
       <w>setbottom</w>
       <w>showtoast</w>
       <w>showtoasthandler</w>
+      <w>typedarray</w>
     </words>
   </dictionary>
 </component>

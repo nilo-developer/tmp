@@ -13,7 +13,7 @@ import org.jetbrains.anko.toast
 import org.koin.standalone.KoinComponent
 import org.koin.standalone.inject
 
-class RecyclerItemProductAdapter(private val context : Context, private val data: List<DataProduct>) :
+class RecyclerItemProductAdapter(private val context : Context , private val data: List<DataProduct>) :
     RecyclerView.Adapter<RecyclerItemProductAdapter.ItemProductViewHolder>() {
 
     inner class ItemProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),KoinComponent {
@@ -25,9 +25,9 @@ class RecyclerItemProductAdapter(private val context : Context, private val data
         private val discount = itemView.customTextView_discount
 
 
-        fun setData(data: DataProduct) {
+        fun setData(data : DataProduct) {
             title.text = data.title
-            picasso.setImage(data.imgAddress, img)
+            picasso.setImage(data.imgAddress , img)
 
             if(data.discount){
                 discount.visibility = View.VISIBLE
