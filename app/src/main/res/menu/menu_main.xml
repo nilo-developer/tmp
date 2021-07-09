@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_about"
+        android:title="درباره ما"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/menu_call"
+        android:title="تماس با ما"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/menu_question"
+        android:title="پرسش های متداول "
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/menu_failor"
+        android:title="گزارش خطا"
+        tools:ignore="HardcodedText" />
+</menu>
