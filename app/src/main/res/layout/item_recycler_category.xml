@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:text="لوازم خانگی"
+    android:textSize="16sp"
+    android:id="@+id/txt_title_item_category"
+    android:gravity="center"
+    android:paddingEnd="15dp"
+    android:layout_marginStart="8dp"
+    android:paddingStart="15dp"
+    android:textColor="@color/black"
+    android:background="@drawable/back_item_recycler_category"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp" />
+

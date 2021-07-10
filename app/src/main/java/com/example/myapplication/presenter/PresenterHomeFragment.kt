@@ -9,11 +9,12 @@ class PresenterHomeFragment(
     private val model: ModelHomeFragment
 ) : BaseLifeCycle {
     override fun onCreate() {
-        setData()
+        setUpRecyclers()
     }
 
-    private fun setData(){
+    private fun setUpRecyclers(){
         view.setDataRecycler(model.getDataRecycler())
+        view.setUpRecyclerCategory(model.getDataCategory())
     }
 
     override fun onDestroy() {

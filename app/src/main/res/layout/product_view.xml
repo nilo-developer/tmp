@@ -46,6 +46,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="16sp"
-        tools:text="همه" />
+        android:text="@string/all" />
 
 </RelativeLayout>
