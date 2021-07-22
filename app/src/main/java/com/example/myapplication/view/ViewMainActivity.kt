@@ -9,7 +9,6 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.example.myapplication.etc.SetFragment
-import com.example.myapplication.etc.Utility
 import com.example.myapplication.model.ModelMainActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.view.*

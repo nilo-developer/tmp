@@ -9,7 +9,7 @@
     android:gravity="center"
     android:paddingEnd="15dp"
     android:layout_marginStart="8dp"
-    android:paddingStart="15dp"
+    android:paddingStart="14dp"
     android:textColor="@color/black"
     android:background="@drawable/back_item_recycler_category"
     android:layout_width="wrap_content"

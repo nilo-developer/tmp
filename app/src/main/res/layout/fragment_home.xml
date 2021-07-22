@@ -19,35 +19,45 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
 
-
-
-        <com.example.myapplication.view.customview.ProductView
-            android:id="@+id/new_product_home_fragment"
-            android:layout_below="@id/recycle_category_home_fragment"
-            app:titleText="جدیدترین ها"
-            android:layout_width="match_parent"
-            android:layout_height="260dp"/>
-
         <com.example.myapplication.view.customview.ProductView
             android:id="@+id/discount_product_home_fragment"
-            android:layout_below="@id/new_product_home_fragment"
+            android:layout_below="@id/recycle_category_home_fragment"
             app:titleText="تخفیفات داغ"
             android:layout_width="match_parent"
             android:layout_height="260dp"/>
 
-        <com.example.myapplication.view.customview.ProductView
-            android:id="@+id/topSelling_product_home_fragment"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_banner1_home_fragment"
+            android:src="@drawable/haraj"
             android:layout_below="@id/discount_product_home_fragment"
-            app:titleText="پرفروش ترین ها"
+            android:scaleType="fitXY"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <com.example.myapplication.view.customview.ProductView
+            android:id="@+id/new_product_home_fragment"
+            android:layout_below="@id/img_banner1_home_fragment"
+            app:titleText="جدیدترین ها"
             android:layout_width="match_parent"
             android:layout_height="260dp"/>
 
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:src="@drawable/takhfif"
+            android:id="@+id/img_banner2_home_fragment"
+            android:scaleType="fitXY"
+            android:layout_below="@id/new_product_home_fragment"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <com.example.myapplication.view.customview.ProductView
+            android:id="@+id/topSelling_product_home_fragment"
+            android:layout_below="@id/img_banner2_home_fragment"
+            app:titleText="پرفروش ترین ها"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"/>
 
     </RelativeLayout>
-
-    <!-- TODO: Update blank fragment layout -->
-
-
-
 </ScrollView>

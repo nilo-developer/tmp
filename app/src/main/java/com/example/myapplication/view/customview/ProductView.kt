@@ -7,9 +7,11 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.activity.ArchiveActivity
 import com.example.myapplication.adapter.RecyclerItemProductAdapter
 import com.example.myapplication.dataClass.DataProduct
 import kotlinx.android.synthetic.main.product_view.view.*
+import org.jetbrains.anko.startActivity
 
 
 class ProductView(context: Context, attributes: AttributeSet) : FrameLayout(context, attributes) {
@@ -35,6 +37,12 @@ class ProductView(context: Context, attributes: AttributeSet) : FrameLayout(cont
     }
 
     fun initRecycler(data: List<DataProduct>) {
+//        if (data.size < 10){
+//            txtall.visibility = View.INVISIBLE
+//        }
+        txtall.setOnClickListener {
+            (context.startActivity<ArchiveActivity>())
+        }
         recycle.adapter = RecyclerItemProductAdapter(context,data)
     }
 }

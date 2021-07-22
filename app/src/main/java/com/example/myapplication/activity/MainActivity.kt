@@ -2,13 +2,9 @@ package com.example.myapplication.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
-import android.view.View
-import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.example.myapplication.etc.SetFragment
-import com.example.myapplication.etc.Utility
 import com.example.myapplication.model.ModelMainActivity
 import com.example.myapplication.presenter.PresenterMainActivity
 import com.example.myapplication.view.ViewMainActivity

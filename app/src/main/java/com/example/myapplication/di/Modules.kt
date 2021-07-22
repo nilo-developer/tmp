@@ -3,6 +3,7 @@ package com.example.myapplication.di
 import com.example.myapplication.fragment.AccountFragment
 import com.example.myapplication.fragment.HomeFragment
 import com.example.myapplication.fragment.ShopFragment
+import com.example.myapplication.model.ModelArchiveActivity
 import com.example.myapplication.model.ModelHomeFragment
 import com.example.myapplication.model.ModelMainActivity
 import com.example.myapplication.presenter.PresenterHomeFragment
@@ -18,6 +19,7 @@ val fragmentModules = module {
 val modelModules = module {
     single { ModelMainActivity() }
     single { ModelHomeFragment() }
+    single { ModelArchiveActivity() }
 }
 val apiModules = module {
     single { Picasso.with(get()) }
