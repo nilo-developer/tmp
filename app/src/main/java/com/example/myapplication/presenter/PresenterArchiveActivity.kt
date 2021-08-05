@@ -11,10 +11,15 @@ class PresenterArchiveActivity(
     override fun onCreate() {
         onClickListener()
         setDataInRecycler()
+        setTitleText()
     }
 
     private fun setDataInRecycler(){
         view.setDataInRecycler(model.getDataInRecycler())
+    }
+
+    private fun setTitleText(){
+        view.setTitleText(model.getTitleAzIntent().toString())
     }
 
     private fun onClickListener(){

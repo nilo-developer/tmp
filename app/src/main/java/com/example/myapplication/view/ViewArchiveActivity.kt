@@ -34,6 +34,10 @@ class ViewArchiveActivity(context: Context, private val utility: Utility) : Fram
             recycle.adapter = RecyclerItemArchiveAdapter(context,data)
     }
 
+    fun setTitleText(title : String){
+        txttitle.text = title
+    }
+
     fun onClickHandler() {
         imgback.setOnClickListener {
             utility.onFinished()

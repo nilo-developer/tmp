@@ -19,7 +19,6 @@ val fragmentModules = module {
 val modelModules = module {
     single { ModelMainActivity() }
     single { ModelHomeFragment() }
-    single { ModelArchiveActivity() }
 }
 val apiModules = module {
     single { Picasso.with(get()) }

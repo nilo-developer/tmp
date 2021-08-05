@@ -15,9 +15,15 @@ import org.jetbrains.anko.startActivity
 
 
 class ProductView(context: Context, attributes: AttributeSet) : FrameLayout(context, attributes) {
-    private val txttitle : AppCompatTextView
-    private val txtall : AppCompatTextView
-    private val recycle : RecyclerView
+
+    private val txttitle: AppCompatTextView
+    private val txtall: AppCompatTextView
+    private val recycle: RecyclerView
+
+    companion object{
+        const val TITLE_KEY = "title"
+        const val TYPE_KEY = "type"
+    }
 
 
     init {
@@ -36,13 +42,13 @@ class ProductView(context: Context, attributes: AttributeSet) : FrameLayout(cont
         txttitle.text = text
     }
 
-    fun initRecycler(data: List<DataProduct>) {
-//        if (data.size < 10){
-//            txtall.visibility = View.INVISIBLE
-//        }
+    fun initRecycler(data : List<DataProduct>) {
+
         txtall.setOnClickListener {
-            (context.startActivity<ArchiveActivity>())
+            context.startActivity<ArchiveActivity>(
+                TITLE_KEY to txttitle.text.toString()
+            )
         }
-        recycle.adapter = RecyclerItemProductAdapter(context,data)
+        recycle.adapter = RecyclerItemProductAdapter(context, data)
     }
 }

@@ -10,13 +10,15 @@ import org.koin.android.ext.android.inject
 
 class ArchiveActivity : AppCompatActivity() , Utility{
 
-    private val model: ModelArchiveActivity by inject()
+
     private lateinit var presenter: PresenterArchiveActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val view = ViewArchiveActivity(this,this)
         setContentView(view)
+
+        val model = ModelArchiveActivity(this)
 
         presenter = PresenterArchiveActivity(view,model)
         presenter.onCreate()

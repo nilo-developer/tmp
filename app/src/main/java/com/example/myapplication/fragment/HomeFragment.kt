@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapter.RecyclerCategoryAdapter
 import com.example.myapplication.dataClass.DataProduct
@@ -17,6 +18,8 @@ import org.koin.android.ext.android.inject
 class HomeFragment : Fragment() {
 
     private val presenter: PresenterHomeFragment by inject()
+    private lateinit var recyclerCategory: RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,6 +29,10 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        recyclerCategory = recycle_category_home_fragment
+
+        recycle_category_home_fragment.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
         presenter.onCreate()
     }
 
