@@ -14,16 +14,8 @@ class RecyclerCategoryAdapter(
     private val data: List<String>
 ) : RecyclerView.Adapter<RecyclerCategoryAdapter.CategoryViewHolder>() {
 
-    inner class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val txtTitle = itemView.txt_title_item_category
 
-        fun setData(data: String) {
-            txtTitle.text = data
-            txtTitle.setOnClickListener {
-                context?.toast(data)
-            }
-        }
-    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         return CategoryViewHolder(
@@ -36,10 +28,23 @@ class RecyclerCategoryAdapter(
 
         )
     }
-
-    override fun getItemCount() = data.size
-
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.setData(data[position])
     }
+
+
+    inner class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val txtTitle = itemView.txt_title_item_category
+
+        fun setData(data: String) {
+            txtTitle.text = data
+            txtTitle.setOnClickListener {
+                context?.toast(data)
+            }
+        }
+    }
+
+
+    override fun getItemCount() = data.size
+
 }

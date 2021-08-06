@@ -6,7 +6,6 @@ import com.example.myapplication.etc.Utility
 import com.example.myapplication.model.ModelArchiveActivity
 import com.example.myapplication.presenter.PresenterArchiveActivity
 import com.example.myapplication.view.ViewArchiveActivity
-import org.koin.android.ext.android.inject
 
 class ArchiveActivity : AppCompatActivity() , Utility{
 
@@ -15,6 +14,7 @@ class ArchiveActivity : AppCompatActivity() , Utility{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val view = ViewArchiveActivity(this,this)
         setContentView(view)
 
@@ -30,6 +30,7 @@ class ArchiveActivity : AppCompatActivity() , Utility{
 
     override fun onDestroy() {
         super.onDestroy()
+
         presenter.onDestroy()
     }
 }

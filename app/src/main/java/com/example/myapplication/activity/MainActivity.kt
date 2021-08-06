@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.example.myapplication.etc.SetFragment
+import com.example.myapplication.etc.Utility
 import com.example.myapplication.model.ModelMainActivity
 import com.example.myapplication.presenter.PresenterMainActivity
 import com.example.myapplication.view.ViewMainActivity
@@ -35,11 +36,17 @@ class MainActivity : AppCompatActivity() , SetFragment {
 //    }
 
     override fun addFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().add(R.id.main_frame,fragment).commit()
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.main_frame,fragment)
+            .commit()
     }
 
     override fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.main_frame,fragment).commit()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.main_frame,fragment)
+            .commit()
     }
 
     override fun onDestroy() {

@@ -16,6 +16,7 @@ class PresenterArchiveActivity(
 
     private fun setDataInRecycler(){
         view.setDataInRecycler(model.getDataInRecycler())
+        view.setText(model.getTypeProduct())
     }
 
     private fun setTitleText(){

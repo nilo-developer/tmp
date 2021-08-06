@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapter.RecyclerCategoryAdapter
 import com.example.myapplication.dataClass.DataProduct
+import com.example.myapplication.enumeration.TypeGetProduct
 import com.example.myapplication.presenter.PresenterHomeFragment
+import com.example.myapplication.view.customview.ProductView
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
 
@@ -19,6 +21,10 @@ class HomeFragment : Fragment() {
 
     private val presenter: PresenterHomeFragment by inject()
     private lateinit var recyclerCategory: RecyclerView
+    private lateinit var new_product_recyceler: ProductView
+    private lateinit var discount_product_recyceler: ProductView
+    private lateinit var topSelling_product_recyceler: ProductView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,19 +39,23 @@ class HomeFragment : Fragment() {
 
         recycle_category_home_fragment.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
+        new_product_recyceler = new_product_home_fragment
+        discount_product_recyceler = discount_product_home_fragment
+        topSelling_product_recyceler = topSelling_product_home_fragment
+        recyclerCategory = recycle_category_home_fragment
         presenter.onCreate()
     }
 
     fun setDataRecycler(data: List<DataProduct>) {
-        new_product_home_fragment.initRecycler(data)
-        discount_product_home_fragment.initRecycler(data)
-        topSelling_product_home_fragment.initRecycler(data)
+        new_product_recyceler.initRecycler(data,TypeGetProduct.NEW_PRODUCT)
+        discount_product_recyceler.initRecycler(data,TypeGetProduct.DISCOUNT_PRODUCT)
+        topSelling_product_recyceler.initRecycler(data,TypeGetProduct.TOP_SELLING_PRODUCT)
     }
 
     fun setUpRecyclerCategory(data: List<String>) {
-        recycle_category_home_fragment.layoutManager =
+        recyclerCategory.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
-        recycle_category_home_fragment.adapter = RecyclerCategoryAdapter(context, data)
+        recyclerCategory.adapter = RecyclerCategoryAdapter(context, data)
     }
 
     override fun onDestroy() {

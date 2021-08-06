@@ -10,6 +10,7 @@ import com.example.myapplication.R
 import com.example.myapplication.activity.ArchiveActivity
 import com.example.myapplication.adapter.RecyclerItemProductAdapter
 import com.example.myapplication.dataClass.DataProduct
+import com.example.myapplication.enumeration.TypeGetProduct
 import kotlinx.android.synthetic.main.product_view.view.*
 import org.jetbrains.anko.startActivity
 
@@ -20,7 +21,7 @@ class ProductView(context: Context, attributes: AttributeSet) : FrameLayout(cont
     private val txtall: AppCompatTextView
     private val recycle: RecyclerView
 
-    companion object{
+    companion object {
         const val TITLE_KEY = "title"
         const val TYPE_KEY = "type"
     }
@@ -42,11 +43,13 @@ class ProductView(context: Context, attributes: AttributeSet) : FrameLayout(cont
         txttitle.text = text
     }
 
-    fun initRecycler(data : List<DataProduct>) {
+    fun initRecycler(data: List<DataProduct>, type: TypeGetProduct) {
 
         txtall.setOnClickListener {
             context.startActivity<ArchiveActivity>(
-                TITLE_KEY to txttitle.text.toString()
+                TITLE_KEY to txttitle.text.toString(),
+                TYPE_KEY to type
+
             )
         }
         recycle.adapter = RecyclerItemProductAdapter(context, data)

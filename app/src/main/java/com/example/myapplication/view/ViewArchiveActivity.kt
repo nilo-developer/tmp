@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.adapter.RecyclerItemArchiveAdapter
 import com.example.myapplication.dataClass.DataProduct
+import com.example.myapplication.enumeration.TypeGetProduct
 import com.example.myapplication.etc.Utility
 import kotlinx.android.synthetic.main.activity_archive.view.*
+import org.jetbrains.anko.toast
 
 @SuppressLint("ViewConstructor")
 class ViewArchiveActivity(context: Context, private val utility: Utility) : FrameLayout(context) {
@@ -32,6 +34,14 @@ class ViewArchiveActivity(context: Context, private val utility: Utility) : Fram
 
     fun setDataInRecycler(data : List<DataProduct>){
             recycle.adapter = RecyclerItemArchiveAdapter(context,data)
+    }
+
+    fun setText(type : TypeGetProduct){
+        when(type){
+            TypeGetProduct.NEW_PRODUCT -> context.toast("new")
+            TypeGetProduct.DISCOUNT_PRODUCT-> context.toast("discount")
+            else -> context.toast("topSelling")
+        }
     }
 
     fun setTitleText(title : String){

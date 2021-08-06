@@ -16,6 +16,20 @@ import org.koin.standalone.inject
 class RecyclerItemArchiveAdapter(private val context : Context, private val data: List<DataProduct>) :
     RecyclerView.Adapter<RecyclerItemArchiveAdapter.ItemProductViewHolder>() {
 
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        ItemProductViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.item_recycler_archive_activity,
+                parent,
+                false
+            )
+        )
+
+    override fun onBindViewHolder(holder: ItemProductViewHolder, position: Int) {
+        holder.setData(data[position])
+    }
+
     inner class ItemProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),KoinComponent {
         private val  picasso : PicassoUtility by inject()
         private val rootView = itemView.const_recycle_product_view
@@ -44,19 +58,9 @@ class RecyclerItemArchiveAdapter(private val context : Context, private val data
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ItemProductViewHolder(
-            LayoutInflater.from(context).inflate(
-                R.layout.item_recycler_archive_activity,
-                parent,
-                false
-            )
-        )
+
 
     override fun getItemCount() = data.size
 
 
-    override fun onBindViewHolder(holder: ItemProductViewHolder, position: Int) {
-        holder.setData(data[position])
-    }
 }
